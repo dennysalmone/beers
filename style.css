@@ -1,0 +1,103 @@
+body {
+
+    background: linear-gradient(90deg, rgba(0,172,140,0.07) 5%, rgba(0,100,149,0.09) 10%, rgba(0,172,140,0.07) 25%);
+}
+
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 5%;
+    gap: 5px;
+    flex-grow: 0;
+}
+
+.beer {
+    flex: 1;
+    background: linear-gradient(0deg, rgba(0,211,255,0) 0%, rgba(0,211,255,0.15099807012648814) 70%, rgba(0,211,255,0.700717787114846) 100%);
+    border: solid 1px rgba(0,0,0,0.1);
+    border-radius: 2%;
+    min-width: 270px;
+    min-height: 380px;
+    text-align: center;
+    position: relative; 
+    max-width: 25%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-grow: 0;
+}
+
+.tagline {
+    height: 23%;
+    width: 100%;
+    position: absolute; 
+    padding-top: 5px;
+    bottom: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(0.25turn, #008b5d6e, #008b5d3b, #008b5d0a);
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.name {
+    height: 15%;
+    width: 100%;
+    position: absolute; 
+    bottom: 25%;
+    -webkit-transition: all 0.5s ease;;
+    -moz-transition: all 0.5s ease;;
+    -o-transition: all 0.5s ease;;
+    transition: all 0.5s ease;
+    margin-top: 5px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #01aa8b;
+    font-style: italic;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+    line-height: 22px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+}
+
+.name:hover {
+    -webkit-transform: rotateZ(25deg);
+    -ms-transform: rotateZ(25deg);
+    transform: rotateZ(25deg);
+  }
+
+.image-beer {
+    width: 65px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content : flex-start;
+    background-image: url(sign.svg);
+    background-repeat: no-repeat;
+    background-size: 170px;
+    margin-left: 20vh;
+}
+
+#header1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000000;
+    font-size: 3rem;
+    margin: 2rem 0 1rem;
+    font-weight: 900;
+    font-size: 92px;
+    width: 52px;
+}
+#header2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #00ac8c7a;
+    font-size: 3rem;
+    margin: 2rem 0 1rem;
+    font-weight: 900;
+    font-size: 92px;
+}

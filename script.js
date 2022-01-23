@@ -1,26 +1,26 @@
 let requestURL = 'https://api.punkapi.com/v2/beers?page=1&per_page=50';
 const submitBtn = document.getElementById('submit-btn');
 let beersArray;
-
+let inputValue = document.getElementById('search');
 requestBeerArray(requestURL)
 
 
 
-console.log(submitBtn)
-submitBtn.addEventListener('click', function rep() {
-        let inputValue = document.getElementById('search').value;
-        requestURL = 'https://api.punkapi.com/v2/beers?beer_name=' + inputValue
-        if (inputValue === '') {requestURL = 'https://api.punkapi.com/v2/beers?page=1&per_page=50'}
+inputValue.addEventListener('change', function () {
+        requestURL = 'https://api.punkapi.com/v2/beers?beer_name=' + inputValue.value
+        if (inputValue.value === '' || inputValue.value === ' ') {requestURL = 'https://api.punkapi.com/v2/beers?page=1&per_page=50'}
         wrapper.innerHTML = '';
+        console.log(inputValue.value)
         requestBeerArray(requestURL)
-        return document.getElementById("search").value = "";
+        // return document.getElementById("search").value = "";
     })
 
-    function clickPress(event) {
-        if (event.keyCode == 13) {
-            submitBtn.click()
-        }
-    }
+    // function clickPress(event) {
+    //     if (event.keyCode == 13) {
+    //         submitBtn.click()
+    //     }
+    // }
+    // to HTML onkeypress='clickPress(event)'
 
     function requestBeerArray(requestURL) {
         fetch(requestURL).then(response => response.json()).then((beers) => {

@@ -1,8 +1,28 @@
-const requestURL = 'https://api.punkapi.com/v2/beers?page=2&per_page=20';
+let requestURL = 'https://api.punkapi.com/v2/beers?page=1&per_page=50';
+const submitBtn = document.getElementById('submit-btn');
 let beersArray;
-requestBeerArray()
 
-    function requestBeerArray() {
+requestBeerArray(requestURL)
+
+
+
+console.log(submitBtn)
+submitBtn.addEventListener('click', function rep() {
+        let inputValue = document.getElementById('search').value;
+        requestURL = 'https://api.punkapi.com/v2/beers?beer_name=' + inputValue
+        if (inputValue === '') {requestURL = 'https://api.punkapi.com/v2/beers?page=1&per_page=50'}
+        wrapper.innerHTML = '';
+        requestBeerArray(requestURL)
+        return document.getElementById("search").value = "";
+    })
+
+    function clickPress(event) {
+        if (event.keyCode == 13) {
+            submitBtn.click()
+        }
+    }
+
+    function requestBeerArray(requestURL) {
         fetch(requestURL).then(response => response.json()).then((beers) => {
             beersArray = beers
         }).then(() => createBeerDiv(beersArray))
@@ -42,7 +62,7 @@ requestBeerArray()
                 console.log(el)
                 wrapper.innerHTML = '';
                 bigBeerDiv.setAttribute('class', 'big-beer')
-                node.style.transform = "rotate(80deg)";
+                node.style.transform = "rotate(90deg)";
                 node.style.width = '150px'
                 node.style.height = '600px'
                 wrapper.appendChild(backButton)
@@ -53,9 +73,9 @@ requestBeerArray()
                 bigBeerDiv.appendChild(tagline)
                 tagline.style.height = '30%'
                 name.style.height = '55%'
-                name.style.fontSize = '45px'
+                name.style.fontSize = '40px'
                 name.style.color = 'black'
-                name.style.fontSize = '55px'
+                name.style.lineHeight = '40px'
                 name.setAttribute('class', 'name nohover')
                 tagline.style.fontSize = '20px'
                 tagline.innerHTML = '<b>' + el.tagline + '</b>' + '<br><br> Alcohol: ' + el.abv + '%, SRM color:' + el.srm + ', Volume: ' + el.boil_volume.value + ' ' + el.boil_volume.unit + '<br><br>' + el.description + '<br>' + el.brewers_tips 

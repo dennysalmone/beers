@@ -1,5 +1,4 @@
 let requestURL = 'https://api.punkapi.com/v2/beers?page=1&per_page=50';
-const submitBtn = document.getElementById('submit-btn');
 let beersArray;
 let input = document.getElementById('search');
 requestBeerArray(requestURL)
@@ -76,8 +75,8 @@ input.addEventListener('input', function () {
                 bigBeerDiv.appendChild(node)
                 bigBeerDiv.appendChild(name)
                 bigBeerDiv.appendChild(tagline)
-                tagline.style.height = '30%'
-                name.style.height = '55%'
+                tagline.style.height = '50%'
+                name.style.height = '72%'
                 name.style.fontSize = '40px'
                 name.style.color = 'black'
                 name.style.lineHeight = '40px'

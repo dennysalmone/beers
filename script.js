@@ -3,6 +3,13 @@ let beersArray;
 let input = document.getElementById('search');
 requestBeerArray(requestURL)
 let timoutId;
+let logoReload = document.getElementById('logo-reload');
+
+logoReload.addEventListener('click', function () {
+    window.location.reload()
+})
+
+
 
 input.addEventListener('input', function () {
     debounce()
